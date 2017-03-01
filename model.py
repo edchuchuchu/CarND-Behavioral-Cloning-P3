@@ -1,5 +1,6 @@
 import os
 import csv
+from random import shuffle
 from keras.models import Sequential, Model
 from keras.layers import Lambda, Cropping2D
 from keras.layers.core import Dense, Activation, Flatten, Dropout
@@ -27,7 +28,7 @@ train_samples, validation_samples = train_test_split(samples[1:], test_size=0.2)
 def generator(samples, batch_size=32):
     num_samples = len(samples)
     while 1: # Loop forever so the generator never terminates
-        sklearn.utils.shuffle(samples)
+        shuffle(samples)
         for offset in range(0, num_samples, batch_size):
             batch_samples = samples[offset:offset+batch_size]
 
