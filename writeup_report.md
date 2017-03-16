@@ -52,9 +52,9 @@ python drive.py model.h5
 
 The model.py file contains the code for training and saving the Nvidia convolution neural network. The file shows the pipeline I used generator for training and validating to bulid and fine-tune the model, and it contains comments to explain how the code works.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. An appropriate model architecture has been employed
+#### 1. An appropriate model architecture has been employed
 
 At the beginning, I tried to use Keras to build the LeNet-5 model. However, it can’t even pass the first turn. I realized that LeNet-5 model maybe work on classification case instead of regression. 
 ```python
