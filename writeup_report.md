@@ -1,6 +1,6 @@
-#**Behavioral Cloning** 
+# **Behavioral Cloning** 
 
-##Writeup Report
+## Writeup Report
 
 ---
 
@@ -31,9 +31,9 @@ The goals / steps of this project are the following:
 [image12]: ./report_images/center_2017_02_19_00_17_25_654.jpg "Recovery Case2 Image3"
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
+#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -42,13 +42,13 @@ My project includes the following files:
 * drive.py for driving the car in autonomous mode
 * writeup_report.md summarizing the results
 
-####2. Submission includes functional code
+#### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, execute the following command to drive the car in track one autonomously
 ```sh
 python drive.py model.h5
 ```
 
-####3. Submission code is usable and readable
+#### 3. Submission code is usable and readable
 
 The model.py file contains the code for training and saving the Nvidia convolution neural network. The file shows the pipeline I used generator for training and validating to bulid and fine-tune the model, and it contains comments to explain how the code works.
 
@@ -134,7 +134,7 @@ def CNN(input_shape):
 	
 	return model
 ```
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 
 Dropout method is using in this model to prevent overfitting. 
 ```python
@@ -146,7 +146,7 @@ and split 20% training dataset to validation data in order to verify overfitting
 ```python
 train_samples, validation_samples = train_test_split(samples[1:], test_size=0.2)
 ```
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 The model is using an adam optimized.
 And I used the default learning rate.
@@ -155,7 +155,7 @@ And I used the default learning rate.
 model.compile(loss='mse', optimizer='adam')
 ```
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 
 Using Udacity provided training data at the beginning to build the initial model.	
 Second, Driving the car in the center lane for both clockwise and count-clockwise direction each 2 laps.	
@@ -163,9 +163,9 @@ Third, added 2 recovery laps for both clockwise and count-clockwise each.
 In the end, added more recovery data for the fail location in autonomous mode.	
 For more details, see the next section. 
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. Solution Design Approach
+#### 1. Solution Design Approach
 
 Step1 Model choosing,	
     I used LeNet at the beginning since it works pretty well on recognize image.
@@ -198,7 +198,7 @@ So I add more center lane, recovery lap, clockwise and counter-clockwise data at
 It can help to fix the issue, and work on any speed at track one in autonomous mode. 
 
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 I use Nvidia CNN structure model at my final approach. (see the following fig)
 
@@ -247,7 +247,7 @@ def CNN(input_shape):
 	return model
 ```
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 
 
 Using pre-provided data first.
